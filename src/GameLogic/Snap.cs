@@ -30,13 +30,13 @@ namespace CardGames.GameLogic
 		private int[] _score = new int[2];
 
 		private bool _started = false;
-
 		/// <summary>
 		/// Create a new game of Snap!
 		/// </summary>
 		public Snap ()
 		{
 			_deck = new Deck ();
+			_gameTimer = SwinGame.CreateTimer();
 		}
 
 		/// <summary>
@@ -92,6 +92,7 @@ namespace CardGames.GameLogic
 				_deck.Shuffle ();		// Return the cards and shuffle
 
 				FlipNextCard ();		// Flip the first card...
+				_gameTimer.Start();
 			}
 		}
 			
@@ -111,6 +112,11 @@ namespace CardGames.GameLogic
 		/// </summary>
 		public void Update()
 		{
+			if(_gameTimer.Ticks > _flipTime)
+			{
+				_game_Time.Reset();
+				FlipNextCard();
+			}
 			//TODO: implement update to automatically slip cards!
 		}
 
