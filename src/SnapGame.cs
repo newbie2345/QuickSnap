@@ -29,6 +29,7 @@ namespace CardGames
 			
 			if (myGame.IsStarted)
 			{
+<<<<<<< HEAD
 				if ( SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped (KeyCode.vk_RSHIFT)){
 					//TODO: add sound effects
 				}
@@ -38,6 +39,21 @@ namespace CardGames
 				else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT)){
 					myGame.PlayerHit (1);
 				}
+=======
+				if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
+				{
+					// TODO: add sound effects
+				}
+				else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT))
+				{
+					myGame.PlayerHit (0);
+				}
+				else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
+				{
+					myGame.PlayerHit (1);
+				}
+				
+>>>>>>> 161c8ab1ead2a7eacb9f8a67e916c42ef3ce45d0
 			}
 		}
 
